@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Script Lynx – Config</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 16px; max-width: 900px; }
+    textarea { width: 100%; height: 320px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .row { margin-top: 12px; display: flex; gap: 12px; align-items: center; }
+    button { padding: 8px 14px; cursor: pointer; }
+    .hint { color: #333; font-size: 0.95rem; line-height: 1.35; }
+    .status { margin-top: 10px; }
+    code { background: #f3f3f3; padding: 2px 4px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Script Lynxr</h1>
+
+  <p class="hint">
+    Single entry per line. Lines starting with spaces or <code>#</code> are ignored. (comments)<br>
+    Default: Entry defined as Substring-Filter (matches entire URL).<br>
+    Optional: Regex & Prefix <code>re:</code> (RE2-compatible).
+  </p>
+
+  <textarea id="rules" placeholder="Beispiele:
+# Substring-Filter (matches e.G. .../tracker.js anywhere)
+tracker.js
+/ads/
+/analytics/
+
+# Regex (re:)
+re:^https?://([^/]+\.)?example\.com/.*evil\.js(\?.*)?$"></textarea>
+
+  <div class="row">
+    <button id="save">Save</button>
+    <span id="count"></span>
+  </div>
+
+  <div class="status" id="status"></div>
+
+  <script src="options.js"></script>
+</body>
+</html>
