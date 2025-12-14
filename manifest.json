@@ -1,6 +1,5 @@
 {
   "manifest_version": 3,
-  "version": "1.0.0",
   "name": "ScriptLynx",
   "version": "1.0.1",
   "description": "Blocks scripts and resources on any website by defined patterns and paths.",
